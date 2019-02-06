@@ -1,0 +1,44 @@
+@import '../../../../style/variables.scss';
+
+.item{
+    padding: 10px;
+    box-shadow: 0px 3px 2px -2px rgba(map-get($colors, default), .3);
+    cursor: pointer;
+    overflow-y: hidden;
+
+    header{
+        width: 100%;
+        height: 23px;
+    }
+
+    .content{
+        color: rgba(map-get($colors, default), .7);
+        font-size: 14px;
+        max-height: 90px;
+        overflow-y: hidden;
+        display: flex;
+
+        span{
+            margin-top: 5px;
+        }
+
+        button{
+            padding: 0px;
+            box-shadow: none !important;
+            background-color: transparent !important;
+            margin-top: 1.5px;
+            font-size: 13px;
+            
+            margin-left: auto;
+        }
+    }
+
+    &:hover{
+        background-color: rgba(map-get($colors, default), .03);
+    }
+
+    &:last-child{
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+    }
+}

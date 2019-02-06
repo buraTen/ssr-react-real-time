@@ -1,0 +1,18 @@
+@import '../../style/mixins.scss';
+
+.container{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    @extend %container;
+
+    .wrapper{
+        width: 100%;
+        margin: auto;
+        height: calc(100vh - 60px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

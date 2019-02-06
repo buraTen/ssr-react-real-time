@@ -1,0 +1,46 @@
+@import './variables';
+
+%container{
+    width: 1100px;
+    margin: 0 auto;
+
+    @media only screen and (max-width: 1100px) {
+        width: 100%;
+    }
+}
+
+%userProfileImage{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+
+%scrollbar{
+    will-change: transform;
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+        background-color: rgba(map-get($colors, default), .07);
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(map-get($colors, default), .7);
+        border-radius: 2px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+    }
+}
+
+%status{
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    margin-left: auto;
+    border: 1px solid rgba(0,0,0,.4);
+}
+%status-online{
+    @extend %status;
+    background-color: #08E770;
+}

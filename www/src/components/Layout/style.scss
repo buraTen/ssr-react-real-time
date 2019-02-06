@@ -1,0 +1,11 @@
+@import '../../style/mixins';
+
+.main{
+    margin: 0 auto;
+    will-change: transform;
+    margin-top: 60px;
+
+    &.hideHeader{
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,23 @@
+@import '../../style/variables.scss';
+@import '../../style/mixins.scss';
+
+.container{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    .userProfile{
+        margin-bottom: 15px;
+    }
+
+    .usersContainer{
+        min-height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        @extend %container;
+    }
+}

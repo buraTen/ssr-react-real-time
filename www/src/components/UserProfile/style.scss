@@ -1,0 +1,118 @@
+@import '../../style/mixins.scss';
+
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    header, header .overlay{
+        border-radius: 3px;
+    }
+
+    header{
+        width: 100%;
+        height: 170px;
+        position: relative;
+        will-change: transform;
+
+        @media only screen and (max-width: 500px) {
+            height: 150px;
+        }
+
+        .overlay{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,.4);
+            z-index: 5;
+            top: 0;
+        }
+
+        a img{
+            /*74, 214, 249*/
+            background-color: rgba(white, .8);
+            box-shadow: 0px 0px 3px 0 rgba(white, .6);
+            padding: 3px;
+            @extend %userProfileImage;
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            transform: translateX(-50%);
+            left: 50%;
+            bottom: -30px;
+            z-index: 10;
+            //box-shadow: 0px 0px 3px 1px rgba(0,0,0,.7);
+        }
+
+        span{
+            position: absolute;
+            transform: translateX(-50%);
+            left: 50%;
+            top: 50px;
+            z-index: 20;
+            user-select: none;
+
+            @media only screen and (max-width: 500px) {
+                top: 40px;
+            }
+
+            &.bg{
+                background-color: rgba(0,0,0,.7);
+                //width: 50px;
+                //padding: 0 15px;
+                height: 45px;
+                display: flex;
+                width: 130px;
+                justify-content: center;
+                align-items: center;
+                border-radius: 5px;
+                text-align: center;
+                line-height: 45px;
+                font-size: 13px;
+                cursor: pointer;
+                color: white;
+                box-shadow: 0px 0px 3px 1px rgba(0,0,0,.5);
+
+                svg{
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        .profileLinkWrapper{
+            width: 60px;
+            height: 60px;
+            border-radius: 100%;
+            position: absolute;
+            transform: translateX(-50%);
+            left: 50%;
+            top: calc(100% - 30px);
+            z-index: 20;
+
+            &:hover .profileLink{
+                display: block;
+            }
+
+            .profileLink{
+                background-color: rgba(0,0,0,.7);
+                display: none;
+                top: 0;
+                z-index: 21;
+                width: 60px;
+                height: 60px;
+                border-radius: 100%;
+                color: white;
+                font-size: 20px;
+                text-align: center;
+                line-height: 60px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .username{
+        width: 100%;
+        text-align: center;
+        margin-top: 40px;
+    }
+}

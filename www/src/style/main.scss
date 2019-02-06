@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+@import './variables';
+
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    font-family: 'PT Sans', sans-serif;
+    color: map-get($colors, default);
+}
+
+noscript{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-align: center;
+    padding-top: 20%;
+}
+
+body{
+    margin: 0;
+    background-color: map-get($colors, bg);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: map-get($colors, default);
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+
+    li{
+        list-style: none;
+    }
+}

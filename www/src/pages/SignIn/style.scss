@@ -1,0 +1,137 @@
+@import '../../style/variables.scss';
+@import '../../style/mixins.scss';
+
+.container{
+    @extend %container;
+    margin-top: 90px;
+
+    .wrapper{
+        max-width: 340px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+
+        form{
+            position: relative;
+
+            .overlay{
+                width: 100%;
+                height: calc(100% - 55px);
+                position: absolute;
+                z-index: 999;
+                top: 55px;
+                background-color: rgba(255,255,255,.8);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-bottom: 50px;
+            }
+    
+            .row{
+                width: 100%;
+                height: 44px;
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin: 10px 0;
+                justify-content: center;
+
+                input{
+                    height: 100%;
+                    width: 100%;
+                    outline: 0;
+                    border: 0;
+                    box-shadow: 0px 0px 1px 1px rgba(0,0,0,.13);
+                    border-radius: 3px;
+                    background-color: white;
+                    outline: 0;
+                }
+    
+                input[type='text'], input[type='password'], input[type='email']{
+                    padding: 0 50px 0 20px;
+                }
+    
+                input[type='submit']{
+                    color: white;
+                    background-color: rgba(0,0,0,.6);
+                    cursor: pointer;
+                }
+    
+                .select{
+                    width: 100%;
+                }
+    
+                .icon, h1{
+                    color: rgba(map-get($colors, default), .75);
+                }
+    
+                .icon{
+                    position: absolute;
+                    right: 20px;
+                    font-size: 14px;
+                }
+    
+                h1{
+                    margin-bottom: 35px;
+                    font-weight: 300;
+                }
+    
+                span{
+                    cursor: pointer;
+                }
+            }
+    
+            .row2{
+    
+                input{
+                    width: 50%;
+                }
+
+                .icon:first-of-type{
+                    right: calc(50% + 20px);
+                }
+                
+                input:first-of-type, .select:first-child div{
+                    border-top-right-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+    
+                input:last-of-type, .select:last-child div{
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                }
+    
+                .select{
+                    max-width: 50%;
+                }
+            }
+    
+            .row3{
+                .select{
+                    max-width: 33.333%;
+    
+                    div:first-child{
+                        border-top-right-radius: 0 !important;
+                        border-bottom-right-radius: 0 !important;
+                    }
+                    div:nth-child(n+1){
+                        border-radius: 0 !important;
+                    }
+                    div:last-child{
+                        border-top-right-radius: 0 !important;
+                        border-bottom-right-radius: 0 !important;
+                    }
+                }
+            }
+    
+            .noIcon input[type='text']{
+                padding: 0 20px;
+            }
+        }
+    }
+}
+
+.select input{
+    box-shadow: none !important;
+}

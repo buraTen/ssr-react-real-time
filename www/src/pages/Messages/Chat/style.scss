@@ -1,0 +1,176 @@
+@import '../../../style/mixins.scss';
+
+.container{
+    width: calc(100% - 260px - 10px);
+    height: calc(100vh - 100px);
+    margin-left: 270px;
+    position: relative;
+
+    @media only screen and (max-width: 800px) {
+        height: calc(100vh - 171px);
+        margin-left: 0;
+        width: 100%;
+        overflow-y: hidden;
+
+        display: none;
+        &.activeContainer{
+            display: block;
+        }
+    }
+
+    .select{
+        position: absolute;
+        transform: translateY(-50%);
+        top: 50%;
+        text-align: center;
+        width: 100%;
+    }
+
+    .messageBox{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: calc(100% - 50px);
+        overflow-y: scroll;
+        overflow-x: hidden;
+        align-items: flex-start;
+        @extend %scrollbar;
+        padding: 0 10px;
+
+        @media only screen and (max-width: 800px) {
+            height: calc(100vh - 171px);
+            padding-bottom: 50px;
+            &::-webkit-scrollbar {
+                width: 0px;
+            } 
+        }
+
+        .message{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            margin-bottom: 15px;
+            flex: 0 0 auto;
+
+            @media only screen and (max-width: 800px) {
+                margin: 7.5px 0;
+            }
+
+            &:last-child{
+                margin-bottom: 0;
+            }
+
+            &.unread .content{
+                box-shadow: 0px 0px 4px #f4b042;
+                @keyframes unread {
+                    0%{ background-color: #f4b042; }
+                    100%{ background-color: white; }
+                }
+                animation: unread 1s infinite linear;
+            }
+
+            .user{
+                height: 40px;
+                width: 40px;
+                border-radius: 100%;
+                margin-right: 10px;
+                order: 0;
+
+                img{
+                    height: 40px;
+                    width: 40px;
+                }
+            }
+
+            .content{
+                min-height: 40px;
+                background-color: rgba(gray, .8);
+                padding: 8px 12px;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                position: relative;
+                max-width: 70%;
+                order: 1;
+                background-color: white;
+                box-shadow: 0px 0px 2px 0px rgba(0,0,0,.2);
+            }
+
+            .date{
+                margin-left: 10px;
+                order: 2;
+                font-size: 11px;
+                display: flex;
+                align-items: center;
+            }
+
+            &.client{
+                justify-content: flex-end;
+
+                .user{
+                    margin-right: 0;
+                    margin-left: 10px;
+                    order: 2;
+                }
+
+                .content{
+                    order: 1;
+                    background-color: rgba(0, 0, 0, .7);
+                    color: white;
+
+                    &::before{
+                        clip-path: polygon(65% 50%, 0 100%, 0 0);
+                        left: unset;
+                        right: -12px;
+                    }
+                }
+
+                .date{
+                    margin-left: 0;
+                    margin-right: 10px;
+                    order: 0;
+                }
+            }
+        }
+    }
+
+    .newMessage{
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        flex-direction: row;
+        padding-top: 10px;
+
+        input{
+            height: 100%;
+            flex: 1;
+            border-radius: 3px;
+            border: 0px;
+            box-shadow: 0px 0px 3px 0px rgba(28, 28, 28, .65);
+            outline: 0;
+            padding: 0 15px;
+            
+            @media only screen and (max-width: 800px) {
+                border-radius: 0;
+            }
+        }
+
+        .item{
+            height: 100%;
+            padding: 0 15px;
+            border-radius: 3px;
+            border: 0;
+            box-shadow: 0px 0px 3px 0px rgba(28, 28, 28, .65);
+            outline: 0;
+            background-color: white;
+
+            @media only screen and (max-width: 800px) {
+                border-radius: 0;
+            }
+        }
+    }
+}
